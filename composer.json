@@ -1,9 +1,5 @@
 {
     "require": {
-        "slim/slim": "2.*",
-        "twig/twig": "1.*",
-        "j4mie/idiorm": "1.5.*",
-        "j4mie/paris": "1.*",
-        "slim/extras": "2.*"
+        "slim/slim": "2.*"
     }
 }
