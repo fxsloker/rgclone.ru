@@ -1,13 +1,23 @@
 <?php
 require "/vendor/autoload.php";
 
-// create new Slim instance
-$app = new \Slim\Slim();
+use \Slim\Slim as Slim;
+
+$app = new Slim();
  
-// add new Route
+
+$app->config(array(
+   'templates.path' => './templates/'
+));
+
 $app->get('/', function() use ($app) {
- 	echo "<h1>Hello Slim World</h1>";
+ 	$app->render('index.php');
 });
- 
-// run the Slim app
+
+
+$app->get('/upload', function() use ($app) {
+ 	$app->render('upload.php');
+});
+
+
 $app->run();
