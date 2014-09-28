@@ -16,13 +16,15 @@ $app->get('/', function() use ($app) {
  	$app->render('main.tpl');
 });
 
-$app->post('/upload', function() use ($app) {
+$app->post('/', function() use ($app) {
 	$uploaddir = "uploads/";
-	$temp = $_FILES['userfile']['name'];
+	$temp = $_FILES['file']['name'];
+
 	$uploadfile = $uploaddir . $temp;
 
-	move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile);
+	move_uploaded_file($_FILES['file']['tmp_name'], $uploadfile);
 
+	$app->flash('message','Файл загружен!');
 	$app->render('upload.tpl');
 });
 

@@ -4,6 +4,7 @@
 			<input type="file" size="50" name="file" id="choose">
 			<input type="submit" value="Отправить" name="commit" id="commit" class="btn upload">
 		</form>
+
 	</center>
 </div>
 	
