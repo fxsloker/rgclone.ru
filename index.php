@@ -13,7 +13,6 @@ $app->config(array(
 $app->render('header.tpl');
 
 $app->get('/', function() use ($app) {
-	$x = 1;
  	$app->render('main.tpl');
 });
 
