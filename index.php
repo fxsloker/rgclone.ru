@@ -7,17 +7,26 @@ $app = new Slim();
  
 
 $app->config(array(
-   'templates.path' => './templates/'
+   'templates.path' => 'templates/'
 ));
 
+$app->render('header.tpl');
+
 $app->get('/', function() use ($app) {
- 	$app->render('index.php');
+	$x = 1;
+ 	$app->render('main.tpl');
 });
 
+$app->post('/upload', function() use ($app) {
+	$uploaddir = "uploads/";
+	$temp = $_FILES['userfile']['name'];
+	$uploadfile = $uploaddir . $temp;
 
-$app->get('/upload', function() use ($app) {
- 	$app->render('upload.php');
+	move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile);
+
+	$app->render('upload.tpl');
 });
 
+$app->render('footer.tpl');
 
 $app->run();

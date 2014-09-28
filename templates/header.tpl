@@ -13,18 +13,3 @@
 			</div>
 		</div>
 		<div id="content">
-			<div id="middle-form">
-				<center>
-					<form action="upload.php" method="post" id="upload_form">
-						<input type="file" size="50" name="file" id="choose">
-						<input type="submit" value="Отправить" name="commit" id="commit" class="btn upload">
-					</form>
-				</center>
-			</div>
-		</div>
-	</div>
-	<div id="footer">
-		
-	</div>
-</body>
-</html>
