@@ -1,1 +1,1 @@
-<?php if(isset($flash['message'])) echo '<p class="text-success">'.$flash['message'].'</p>'; ?>
+<h1>Файл загружен!</h1>
