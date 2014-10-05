@@ -10,10 +10,12 @@ $app->config(array(
    'templates.path' => 'templates/'
 ));
 
-$app->render('header.tpl');
-
 $app->get('/', function() use ($app) {
  	$app->render('main.tpl');
+});
+
+$app->get('/upload', function() use ($app) {
+ 	$app->render('upload.tpl');
 });
 
 $app->post('/', function() use ($app) {
@@ -22,12 +24,8 @@ $app->post('/', function() use ($app) {
 	$uploadfile = $uploaddir . $temp;
 
 	move_uploaded_file($_FILES['file']['tmp_name'], $uploadfile);
-
-	$app->flash('message','Файл загружен!');
-
-	$app->render('upload.tpl');
+	$app->redirect('upload', array(
+		'fileName' => $temp));
 });
-
-$app->render('footer.tpl');
 
 $app->run();

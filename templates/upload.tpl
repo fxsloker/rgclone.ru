@@ -1,1 +1,9 @@
-<?php if(isset($flash['message'])) echo '<p class="text-success">'.$flash['message'].'</p>'; ?>
+<?php include('header.tpl'); ?>
+
+<div style="margin-right: 280px;min-height: 400px" id="content" class="container-fluid">
+<div class="page-header">
+<h1>
+<?php echo $temp ?>
+</h1>
+</div>
+<?php include('footer.tpl'); ?>
